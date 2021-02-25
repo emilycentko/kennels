@@ -1,7 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { Home } from "./Home"
-import { AnimalCard } from "./animal/AnimalCard"
+import { AnimalCard } from "./animal/Animal"
 
 export const ApplicationViews = () => {
     return (
