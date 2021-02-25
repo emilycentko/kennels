@@ -4,12 +4,18 @@ import { EmployeeCard } from "./employee/Employee"
 import { CustomerCard } from "./customer/Customer"
 import { LocationCard } from "./location/Location"
 import { PropsAndState } from "./PropsAndState"
+import { NavBar } from "./nav/NavBar"
+import { ApplicationViews } from "./ApplicationViews"
 import "./Kennel.css"
 import "./animal/Animal.css"
 import "./employee/Employee.css"
+import "./Kennel.css"
 
 export const Kennel = () => (
     <>
+        <NavBar />
+        <ApplicationViews />
+        
         <h2>Nashville Kennels</h2>
         <small>Loving care when you're not there.</small>
 
