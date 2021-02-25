@@ -3,6 +3,7 @@ import { AnimalCard } from "./animal/Animal"
 import { EmployeeCard } from "./employee/Employee"
 import { CustomerCard } from "./customer/Customer"
 import { LocationCard } from "./location/Location"
+import { PropsAndState } from "./PropsAndState"
 import "./Kennel.css"
 import "./animal/Animal.css"
 import "./employee/Employee.css"
@@ -17,6 +18,7 @@ export const Kennel = () => (
             <div>500 Puppy Way</div>
         </address>
 
+        <PropsAndState yourName="Emily" />
         <h2>Animals</h2>
         <article className="animals">
             <AnimalCard />
