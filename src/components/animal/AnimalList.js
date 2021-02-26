@@ -19,8 +19,8 @@ export const AnimalList = () => {
     <div className="animals">
       {console.log("AnimalList: Render", animals)}
       {
-        animals.map(animal => {
-          return <AnimalCard key={animal.id} animal={animal} />
+        animals.map(animalObj => {
+          return <AnimalCard key={animalObj.id} animal={animalObj} />
         })
       }
     </div>
