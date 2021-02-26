@@ -7,6 +7,9 @@ export const AnimalContext = createContext()
 export const AnimalProvider = (props) => {
     const [animals, setAnimals] = useState([])
 
+    /* Hook = useState, which defines a variable that holds the state of the component
+    and a function that updates it */
+
     const getAnimals = () => {
         return fetch("http://localhost:8088/animals?_expand=location")
         .then(res => res.json())
