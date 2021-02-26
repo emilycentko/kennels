@@ -16,13 +16,15 @@ export const Kennel = () => (
         <NavBar />
         <ApplicationViews />
         
-        <h2>Nashville Kennels</h2>
-        <small>Loving care when you're not there.</small>
+        <div className="about">
+            <h2>Nashville Kennels</h2>
+            <small>Loving care when you're not there.</small>
 
-        <address>
-            <div>Visit Us at the Nashville North Location</div>
-            <div>500 Puppy Way</div>
-        </address>
+            <address>
+                <div>Visit Us at the Nashville North Location</div>
+                <div>500 Puppy Way</div>
+            </address>
+            </div>
 
         <PropsAndState yourName="Emily" />
         <h2>Animals</h2>
