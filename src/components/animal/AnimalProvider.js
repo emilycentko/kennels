@@ -11,7 +11,7 @@ export const AnimalProvider = (props) => {
     and a function that updates it */
 
     const getAnimals = () => {
-        return fetch("http://localhost:8088/animals?_expand=location")
+        return fetch("http://localhost:8088/animals")
         .then(res => res.json())
         .then(setAnimals)
     }
