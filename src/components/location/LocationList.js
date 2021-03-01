@@ -15,8 +15,8 @@ export const LocationList = () => {
 
   return (
     <>
+      <h2>Locations</h2>
       <div className="locations">
-        <h2>Locations</h2>
         {console.log("LocationList: Render", locations)}
         {
           locations.map(locationObj => {

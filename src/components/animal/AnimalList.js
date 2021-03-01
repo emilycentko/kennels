@@ -29,9 +29,9 @@ export const AnimalList = () => {
 
   return (
     <>
+      <h2>Animals</h2>
       <div className="animals">
         {console.log("AnimalList: Render", animals)}
-      <h2>Animals</h2>
 
 		  <button onClick={() => {history.push("/animals/create")}}>Add Animal</button>
       

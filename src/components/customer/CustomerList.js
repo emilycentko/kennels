@@ -14,13 +14,16 @@ export const CustomerList = () => {
 
 
   return (
-    <div className="customers">
+    <>
+      <h2>Customers</h2>
+      <div className="customers">
       {console.log("CustomerList: Render", customers)}
-      {
-        customers.map(customerObj => {
-          return <CustomerCard key={customerObj.id} customer={customerObj} />
-        })
-      }
-    </div>
+        {
+          customers.map(customerObj => {
+            return <CustomerCard key={customerObj.id} customer={customerObj} />
+          })
+        }
+      </div>
+    </>
   )
 }
