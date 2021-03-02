@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react"
+import { useHistory } from "react-router-dom" // import from libraries before your local modules
 import { AnimalContext } from "./AnimalProvider"
 import { LocationContext } from "../location/LocationProvider"
 import { CustomerContext } from "../customer/CustomerProvider"
@@ -11,6 +12,11 @@ export const AnimalList = () => {
   const { locations, getLocations } = useContext(LocationContext)
   const { customers, getCustomers } = useContext(CustomerContext)
 
+  // The useHistory hook lets us tell React which route we want to visit.
+  // We will use it to tell React to render the animal form component.
+
+  const history = useHistory()
+
   //useEffect - reach out to the world for something
   useEffect(() => {
     console.log("AnimalList: useEffect - getAnimals")
@@ -22,19 +28,26 @@ export const AnimalList = () => {
 
 
   return (
-    <div className="animals">
-      {console.log("AnimalList: Render", animals)}
-      {
-        animals.map(animalObj => {
-          const owner = customers.find(customer => customer.id === animalObj.customerId)
-          const clinic = locations.find(location => location.id === animalObj.locationId)
+    <>
+      <h2>Animals</h2>
+      <div className="animal__page">
+        {console.log("AnimalList: Render", animals)}
 
-          return <AnimalCard key={animalObj.id}
-          location={clinic}
-          customer={owner}
-          animal={animalObj} />
-        })
-      }
-    </div>
+		      <button onClick={() => {history.push("/animals/create")}}>Add Animal</button>
+          <div className="animals">
+            {
+            animals.map(animalObj => {
+              const owner = customers.find(customer => customer.id === animalObj.customerId)
+              const clinic = locations.find(location => location.id === animalObj.locationId)
+
+              return <AnimalCard key={animalObj.id}
+                location={clinic}
+                owner={owner}
+                animal={animalObj} />
+              })
+            }
+        </div>
+      </div>
+    </>
   )
 }

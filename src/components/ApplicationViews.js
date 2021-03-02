@@ -9,6 +9,7 @@ import { EmployeeProvider } from "./employee/EmployeeProvider"
 import { EmployeeList } from "./employee/EmployeeList"
 import { LocationProvider } from "./location/LocationProvider"
 import { LocationList } from "./location/LocationList"
+import { AnimalForm } from "./animal/AnimalForm"
 
 export const ApplicationViews = () => {
     return (
@@ -19,7 +20,6 @@ export const ApplicationViews = () => {
             </Route>
 
             {/* Render the locations list when http://localhost:3000/locations */}
-            <h2>Locations</h2>
             <LocationProvider>
                 <Route path="/locations">
                     <LocationList />
@@ -27,19 +27,21 @@ export const ApplicationViews = () => {
             </LocationProvider>
 
             {/* Render the animal list when http://localhost:3000/animals */}
-            <h2>Animals</h2>
             <AnimalProvider>
                 <LocationProvider>
                     <CustomerProvider>
                         <Route exact path="/animals">
                             <AnimalList />
                         </Route>
+
+                        <Route path="/animals/create">
+                            <AnimalForm />
+                        </Route>
                     </CustomerProvider>
                 </LocationProvider>
             </AnimalProvider>
 
             {/* Render the employees list when http://localhost:3000/employees */}
-            <h2>Employees</h2>
             <EmployeeProvider>
                 <Route path="/employees">
                     <EmployeeList />
@@ -47,7 +49,6 @@ export const ApplicationViews = () => {
             </EmployeeProvider>
 
             {/* Render the customers list when http://localhost:3000/customers */}
-            <h2>Customers</h2>
             <CustomerProvider>
                 <Route path="/customers">
                     <CustomerList />

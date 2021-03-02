@@ -14,13 +14,16 @@ export const EmployeeList = () => {
 
 
   return (
-    <div className="employees">
+    <>
+      <h2>Employees</h2>
+      <div className="employees">
       {console.log("EmployeeList: Render", employees)}
-      {
+        {
         employees.map(employeeObj => {
           return <EmployeeCard key={employeeObj.id} employee={employeeObj} />
         })
-      }
-    </div>
+        }
+      </div>
+    </>
   )
 }
