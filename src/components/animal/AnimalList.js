@@ -30,22 +30,23 @@ export const AnimalList = () => {
   return (
     <>
       <h2>Animals</h2>
-      <div className="animals">
+      <div className="animal__page">
         {console.log("AnimalList: Render", animals)}
 
-		  <button onClick={() => {history.push("/animals/create")}}>Add Animal</button>
-      
-      {
-        animals.map(animalObj => {
-          const owner = customers.find(customer => customer.id === animalObj.customerId)
-          const clinic = locations.find(location => location.id === animalObj.locationId)
+		      <button onClick={() => {history.push("/animals/create")}}>Add Animal</button>
+          <div className="animals">
+            {
+            animals.map(animalObj => {
+              const owner = customers.find(customer => customer.id === animalObj.customerId)
+              const clinic = locations.find(location => location.id === animalObj.locationId)
 
-          return <AnimalCard key={animalObj.id}
-          location={clinic}
-          owner={owner}
-          animal={animalObj} />
-        })
-      }
+              return <AnimalCard key={animalObj.id}
+                location={clinic}
+                owner={owner}
+                animal={animalObj} />
+              })
+            }
+        </div>
       </div>
     </>
   )
