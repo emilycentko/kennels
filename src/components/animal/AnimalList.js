@@ -42,7 +42,7 @@ export const AnimalList = () => {
 
           return <AnimalCard key={animalObj.id}
           location={clinic}
-          customer={owner}
+          owner={owner}
           animal={animalObj} />
         })
       }
