@@ -28,11 +28,15 @@ export const LocationDetail = () => {
       <div className="employee__names">
           {location.employees?.map(employee => employee.name).join(", ")}
       </div>
-      
+
       <h4>Current Residents</h4>
       <div className="animal__names">
           {location.animals?.map(animal => animal.name).join(", ")}
       </div>
+
+      <button onClick={() => {
+        history.push(`/locations/edit/${location.id}`)
+        }}>Edit</button>
     </section>
   )
 }
