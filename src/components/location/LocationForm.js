@@ -1,17 +1,20 @@
 import React, { useContext, useState } from "react"
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { LocationContext } from "../location/LocationProvider"
 import "./Location.css"
 
 export const LocationForm = () => {
-    const { addLocation } = useContext(LocationContext)
+    const { addLocation, getLocationById, updateLocation } = useContext(LocationContext)
 
     const [location, setLocation] = useState({
         name: "",
         address: "",
     });
 
-    const history = useHistory();
+    const [isLoading, setIsLoading] = useState(true);
+
+    const { animalId } = useParams();
+	  const history = useHistory();
 
     const handleControlledInputChange = (event) => {
         const newLocation = { ...location }
