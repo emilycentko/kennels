@@ -7,7 +7,6 @@ import { Register } from "./auth/Register"
 import "./Kennel.css"
 import "./animal/Animal.css"
 import "./employee/Employee.css"
-import "./Kennel.css"
 
 export const Kennel = () => (
     <>
