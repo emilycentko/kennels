@@ -58,6 +58,10 @@ export const ApplicationViews = () => {
                 <Route exact path="/animals/detail/:animalId(\d+)">
 		            <AnimalDetail />
 	            </Route>
+
+                <Route path="/animals/edit/:animalId(\d+)">
+                    <AnimalForm />
+                </Route>
             </AnimalProvider>
 
             {/* Render the employees list when http://localhost:3000/employees */}
