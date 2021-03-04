@@ -4,7 +4,7 @@ import { LocationContext } from "../location/LocationProvider"
 import "./Location.css"
 
 export const LocationForm = () => {
-    const { addLocation, getLocationById, updateLocation } = useContext(LocationContext)
+    const { addLocation, updateLocation } = useContext(LocationContext)
 
     const [location, setLocation] = useState({
         name: "",
@@ -31,8 +31,6 @@ export const LocationForm = () => {
           } else {
             setIsLoading(true);
   
-        //   addLocation(location)
-        //   .then(() => history.push("/locations"))
         if (locationId){
             
             updateLocation({
