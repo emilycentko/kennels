@@ -14,3 +14,11 @@
 button {
     height: 30px;
 }
+
+.animal__search {
+    margin: 1em;
+}
+
+.input--wide {
+    margin: 1em;
+}
