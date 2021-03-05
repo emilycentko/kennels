@@ -6,7 +6,7 @@ import { useParams, useHistory } from "react-router-dom"
 export const AnimalDetail = () => {
   const { getAnimalById, releaseAnimal } = useContext(AnimalContext)
 
-	const [animal, setAnimal] = useState({})
+	const [animal, setAnimals] = useState({})
 
 	const {animalId} = useParams();
 	const history = useHistory();
@@ -22,7 +22,7 @@ export const AnimalDetail = () => {
     console.log("useEffect", animalId)
     getAnimalById(animalId)
     .then((response) => {
-      setAnimal(response)
+      setAnimals(response)
     })
     }, [])
 

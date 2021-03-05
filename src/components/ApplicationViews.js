@@ -15,6 +15,7 @@ import { LocationForm } from "./location/LocationForm"
 import { AnimalDetail } from "./animal/AnimalDetail"
 import { EmployeeDetail } from "./employee/EmployeeDetail"
 import { LocationDetail } from "./location/LocationDetail"
+import { AnimalSearch } from "./animal/AnimalSearch"
 
 export const ApplicationViews = () => {
     return (
@@ -48,6 +49,7 @@ export const ApplicationViews = () => {
                 <LocationProvider>
                     <CustomerProvider>
                         <Route exact path="/animals">
+                            <AnimalSearch />
                             <AnimalList />
                         </Route>
 

@@ -51,6 +51,8 @@ export const AnimalProvider = (props) => {
           .then(getAnimals)
       }
 
+    const [ searchTerms, setSearchTerms ] = useState("")
+
     /*
         You return a context provider which has the
         `animals` state, `getAnimals` function,
@@ -59,7 +61,7 @@ export const AnimalProvider = (props) => {
     */
     return (
         <AnimalContext.Provider value={{
-            animals, getAnimals, addAnimal, getAnimalById, releaseAnimal, updateAnimal
+            animals, getAnimals, addAnimal, getAnimalById, releaseAnimal, updateAnimal, searchTerms, setSearchTerms
         }}>
             {props.children}
         </AnimalContext.Provider>
