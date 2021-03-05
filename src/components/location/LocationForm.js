@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import { useHistory, useParams } from 'react-router-dom';
 import { LocationContext } from "../location/LocationProvider"
 import "./Location.css"
 
 export const LocationForm = () => {
-    const { addLocation, updateLocation } = useContext(LocationContext)
+    const { addLocation, updateLocation, getLocationById,getLocations } = useContext(LocationContext)
 
     const [location, setLocation] = useState({
         name: "",
@@ -49,6 +49,18 @@ export const LocationForm = () => {
           }
         }
       }
+
+    useEffect(() => {
+          if (locationId) {
+            getLocationById(locationId)
+            .then(location => {
+                setLocation(location)
+                setIsLoading(false)
+            })
+          } else {
+            setIsLoading(false)
+        }
+    }, [])
 
     return (
         <form className="locationForm">
